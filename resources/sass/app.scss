@@ -17,3 +17,13 @@ body {
 html {
     height: 100%;
 }
+
+@media (max-width: 450px) {
+    body {
+        background-image: none;
+    }
+    .card {
+        border: none;
+        margin-top: 4%;
+    }
+}

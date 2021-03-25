@@ -48,11 +48,6 @@
      text-overflow: ellipsis;
 }
 
-.form__select option {
-    width: 50%;
-}
-
-
 .form__select--wrapper:after {
     content: '>';
     font: 17px "Consolas", monospace;
