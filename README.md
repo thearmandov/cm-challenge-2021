@@ -68,6 +68,26 @@ The API is throttled to thwart any abuse as a pre-caution. With a more robust im
 }
 ```
 
+**Successful response 200 Status Code**
+```
+{
+    succss: true,
+    message: 'Seller successfully saved.'
+}
+```
+
+**Validtation Erro 422 Status Code**
+```
+{
+    "message":"The given data was invalid.",
+    "errors":{
+        "firstName":["The first name field is required."],
+        "lastName":["The last name field is required."],
+        "shopCategory":["The shop category field is required."]
+        }
+}
+```
+
 
 ### Running the project locally
 
