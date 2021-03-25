@@ -54,7 +54,7 @@
             </div>
         </div>
         
-
+        <!-- @errors emits an event that triggers an error message, if the API fails to respond with a successfull message. -->
         <Navigation @errors="getErrorMessages" />
     </div>
 </template>
@@ -94,6 +94,7 @@
             }
         },
         watch: {
+            // For a more complex form, persisting data using vuex would be preferred. 
             qualityPerspective(newQualityPerspective) {
                 localStorage.qualityPerspective = newQualityPerspective
             },

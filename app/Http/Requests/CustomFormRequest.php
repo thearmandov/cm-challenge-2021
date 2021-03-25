@@ -32,8 +32,8 @@ class CustomFormRequest extends FormRequest
             'qualityPerspective' => 'required',
             'businessMarketingExp' => 'required',
             'onlineSalesExperience' => 'required',
-            'portfolioLink' => ['required', new uniquePortfolio],
-            'confirmAuthor' => [new portfolioOwnership]
+            'portfolioLink' => ['required', new uniquePortfolio], // Using our custom rule as an extra layer of validation
+            'confirmAuthor' => [new portfolioOwnership] // Using our custom rule as an extra layer of validation
         ];
     }
 }

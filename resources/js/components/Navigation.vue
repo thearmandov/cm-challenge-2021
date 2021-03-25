@@ -43,7 +43,7 @@
                     if (data.success === undefined) {
                         this.$emit('errors',data.errors)
                     } else {
-                        localStorage.clear();
+                        localStorage.clear(); //Let's clear localStorage for next user on same PC. 
                         this.$router.push('/success')
                     }
 

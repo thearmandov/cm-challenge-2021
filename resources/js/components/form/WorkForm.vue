@@ -119,6 +119,7 @@
             }
         },
         watch: {
+            // For a more complex form, persisting data using vuex would be preferred. 
             firstName(newFirstName) {
                 localStorage.firstName = newFirstName
             },

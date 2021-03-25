@@ -19,6 +19,7 @@ class Seller extends Model
         'business_marketing_experience'
     ];
 
+    // Lets check and see if the user already submitted a portfolio. 
     public function getExistingPortfolio($portfolio_link)
     {
         return $this->where('portfolio_link', $portfolio_link)->exists();

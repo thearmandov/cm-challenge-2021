@@ -25,7 +25,7 @@ class PortfolioOwnership implements Rule
      */
     public function passes($attribute, $value)
     {
-        //
+        // Check the request value, if author is confirmed, great -- otherwise, rule validation fails.
         return $value === 'true' ? true : false;
     }
 
