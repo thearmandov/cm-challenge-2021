@@ -14,6 +14,8 @@ Given that I didn't want to spend too much time on the setup, I opted for utiliz
 
 On the API, the implmentation is fairly simple. It is a single post request that takes a payload from the form component. All validation is handled via custom rule sets and requests that handle validation and special cases to ensure that all data ingested is complete and sanitized before loading into the DB. 
 
+While Validation is handled via the API, there is a message that shows for the user, so they have some feedback on what they need to correct in order to successfully submit their application.
+
 The API is throttled to thwart any abuse as a pre-caution. With a more robust implementation, I would have liked to add an IP tracking middleware and some form of JWT token in order to bolster defenses against abuse. 
 
 ## Setup
@@ -88,6 +90,17 @@ The API is throttled to thwart any abuse as a pre-caution. With a more robust im
 }
 ```
 
+### Application Structure
+
+API controller can be found in the `app\Http\Controllers` Directory named `FormController.php`
+
+Custom Form Requests (which handles validation rules) can be found in: `app\Http\Requests\CustomFormRequest.php`
+
+Custom Rules can be found in `app\Http\Rules\portfolioOwnership.php` and `app\Http\Rules\uniquePortfolio.php`
+
+Vue components can be found in `resources\js\components` and the blade template used can be found in `resources\views\welcome.blade.php`
+
+All styles are located in `resources\sass`. Each component is in it's own directory. 
 
 ### Running the project locally
 
