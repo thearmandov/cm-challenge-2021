@@ -23,9 +23,9 @@ The API is throttled to thwart any abuse as a pre-caution. With a more robust im
 
 - cd <project-name>
 
-- yarn / npm install
+- yarn / npm install (Node version >= 10)
 
-- composer install 
+- composer install (php 7.2+)
 
 - cp .env.example .env
 
@@ -42,6 +42,7 @@ update the following with your local DB credentials:
 ###  Database Migration
 
 - Once initial setup is complete, from the command line, run `php artisan migrate`
+- Mysql version 5.6+ required.
 
 *Note:* Migrations can be viewed in the `database\migrations` directory. 
 
