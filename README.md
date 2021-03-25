@@ -31,6 +31,14 @@ The API is throttled to thwart any abuse as a pre-caution. With a more robust im
 
 - Be sure to add your local database credentials for the next step
 
+update the following with your local DB credentials:
+
+```
+    DB_DATABASE=cm_local
+    DB_USERNAME=root
+    DB_PASSWORD=secret
+```
+
 ###  Database Migration
 
 - Once initial setup is complete, from the command line, run `php artisan migrate`
@@ -50,6 +58,10 @@ The API is throttled to thwart any abuse as a pre-caution. With a more robust im
 | business_marketing_experience |    VARCHAR   |    |
 | created_at                    |    TIMESTAMP |   NULL |
 | updated_at                    |    TIMESTAMP |    NULL |
+
+### Running the project locally
+
+- yarn dev && php artisan serve
 
 ### API
 | API           |      Type  |  URL                |
@@ -102,6 +114,3 @@ Vue components can be found in `resources\js\components` and the blade template 
 
 All styles are located in `resources\sass`. Each component is in it's own directory. 
 
-### Running the project locally
-
-- yarn dev && php artisan serve
