@@ -21,7 +21,7 @@
 
         <div class="form">
             <div class="form__group">
-                <div class="form__control">
+                <div class="form__control form__select--wrapper">
                     <label class="form__label" for="qualityPerspective">
                         When create products to sell, which best describes your perspective on quality?
                     </label>
@@ -31,7 +31,7 @@
                     </select>
                 </div>
 
-                <div class="form__control">
+                <div class="form__control form__select--wrapper">
                     <label class="form__label" for="onlineSalesExperience">
                         How would you descript your experience level as an online seller?
                     </label>
@@ -41,7 +41,7 @@
                     </select>
                 </div>
 
-                <div class="form__control">
+                <div class="form__control form__select--wrapper">
                     <label class="form__label" for="businessMarketingExp">
                         How would you describe your understanding of business and marketing?
                     </label>

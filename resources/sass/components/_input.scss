@@ -1,0 +1,103 @@
+.checkbox__item input[type=checkbox] {
+    display: none;
+}
+
+.checkbox__item label {
+    color: #666;
+    font-weight: normal;
+  }
+
+.checkbox__item {
+    display: block;
+    position: relative;
+    padding: 0 6px;
+    margin: -12px 0 0;
+  }
+
+.checkbox__item label:before {
+    content: " ";
+    display: inline-block;
+    position: relative;
+    top: 1px;
+    left: 4px;
+    margin: 0 2px 0 0;
+    width: 14px;
+    height: 14px;
+    border-radius:3px;
+    border:1px solid #088178;
+  }
+  
+.checkbox__item input[type=checkbox]:checked + label:before {
+    content: "\2713";
+    top: -1px;
+    left: 4px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+    font-size: 9px;
+    color: #FFFFFF;
+    background-color:#088178;
+    text-align: center;
+    line-height: 15px;
+  }
+
+.radio__item input[type="radio"] {
+    display:none;
+}
+
+.radio__item label {
+    color: #666;
+    font-weight: normal;
+  }
+
+.radio__item {
+    display: block;
+    position: relative;
+    padding: 0 6px;
+    margin: 2px 0 0;
+  }
+
+.radio__item label:before {
+    content: " ";
+    display: inline-block;
+    position: relative;
+    top: 2px;
+    margin: 0 2px 0 0;
+    width: 14px;
+    height: 14px;
+    border-radius: 11px;
+    border: 1px solid #088178;
+    background-color: transparent;
+  }
+  
+.radio__item input[type=radio]:checked + label:after {
+    border-radius: 11px;
+    width: 6px;
+    height: 6px;
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    content: " ";
+    display: block;
+    background: #088178;
+  }
+
+  @media (max-width: 450px) {
+    .checkbox__item {
+        margin: 2px 0 0;
+    }
+
+    .checkbox__item input[type=checkbox]:checked + label:before {
+        left: 0;
+    }
+}
+
+@media (max-width:460px) {
+    label[for="confirmAuthor"] {
+        font-size: 0.75em;
+    }
+}
+
+@media (max-width:360px) {
+    label[for="confirmAuthor"] {
+        font-size: 0.65em;
+    }
+}

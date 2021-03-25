@@ -1,0 +1,78 @@
+.form {
+    display:flex;
+    justify-content: center;
+    flex-direction:column;
+}
+
+.form__control {
+    display: inline-block;
+    width: 100%;
+    padding:0 0 20px 10px;
+}
+
+.form__group--inline {
+    display:flex;
+    justify-content: space-between;
+    
+    input { 
+        display:flex;
+        flex: 1;
+    }
+}
+
+.form__label {
+    display: block;
+    margin:0; 
+    font-weight: bold;
+    font-size:.75em;
+}
+
+.form__input, .form__select {
+    -webkit-appearance: none;
+    margin:0;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+    width: 100%;
+    padding: 2px 3px;
+    position:relative;
+    background-color: #f9faff;
+}
+
+.form__select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+     appearance: none;
+     height: 30px;
+     white-space:pre-wrap;
+     /* For Firefox: */
+     text-overflow: ellipsis;
+}
+
+.form__select option {
+    width: 50%;
+}
+
+
+.form__select--wrapper:after {
+    content: '>';
+    font: 17px "Consolas", monospace;
+    color: #333;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    right: 22px;
+    line-height: 2em;
+    position: absolute;
+    pointer-events: none;
+}
+
+@media (max-width: 450px) {
+    .form__control {
+        padding: 0 0 10px 0;
+    }
+
+    .form__control:not(:last-child) {
+        margin-right: 20px;
+    }
+}

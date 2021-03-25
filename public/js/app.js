@@ -38088,7 +38088,7 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "form" }, [
         _c("div", { staticClass: "form__group" }, [
-          _c("div", { staticClass: "form__control" }, [
+          _c("div", { staticClass: "form__control form__select--wrapper" }, [
             _c(
               "label",
               {
@@ -38150,7 +38150,7 @@ var render = function() {
             )
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "form__control" }, [
+          _c("div", { staticClass: "form__control form__select--wrapper" }, [
             _c(
               "label",
               {
@@ -38212,7 +38212,7 @@ var render = function() {
             )
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "form__control" }, [
+          _c("div", { staticClass: "form__control form__select--wrapper" }, [
             _c(
               "label",
               {
@@ -38467,7 +38467,7 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "form__group" }, [
-          _c("div", { staticClass: "form__control" }, [
+          _c("div", { staticClass: "form__control form__select--wrapper" }, [
             _c(
               "label",
               { staticClass: "form__label", attrs: { for: "shopCategory" } },

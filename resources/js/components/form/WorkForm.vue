@@ -26,7 +26,7 @@
             </div>
 
              <div class="form__group">
-                <div class="form__control">
+                <div class="form__control form__select--wrapper">
                     <label class="form__label" for="shopCategory">Your Shop Category</label>
                     <select class="form__select" required v-model="shopCategory">
                         <option disabled value=""> Select Category </option>

@@ -1,61 +1,55 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Creative Market Code Challenge (FS Engineer)
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+The goal of this project was to create a working application form that collects user data in a multi-step form in order to assess a potential 
+seller on the platform. 
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Approach
+I felt that given the best approach would be to utilize Laravel's API functionality that would interface with a Vue based front-end application. I chose
+Laravel for it's natural compatibility with Vue with little set up required. 
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+My primary focus was completing all necessary business requirements while minimizing any implmentations that may take more time than necessary to facilitate (I.E implementing Vuex for a single form). 
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Given that I didn't want to spend too much time on the setup, I opted for utilizing localStorage in order to maintain data across components for form submission. Given a larger scope project with more complexity, I would have followed a more robust and scalable state management pattern.
 
-## Learning Laravel
+On the API, the implmentation is fairly simple. It is a single post request that takes a payload from the form component. All validation is handled via custom rule sets and requests that handle validation and special cases to ensure that all data ingested is complete and sanitized before loading into the DB. 
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+The API is throttled to thwart any abuse as a pre-caution. With a more robust implementation, I would have liked to add an IP tracking middleware and some form of JWT token in order to bolster defenses against abuse. 
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Setup
+- clone project (https://github.com/thearmandov/cm-challenge-2021)
 
-## Laravel Sponsors
+- cd <project-name>
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+- yarn / npm install
 
-### Premium Partners
+- composer install 
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
+- cp .env.example .env
 
-## Contributing
+- Be sure to add your local database credentials for the next step
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+###  Database Migration
 
-## Code of Conduct
+- Once initial setup is complete, from the command line, run `php artisan migrate`
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+*Note:* Migrations can be viewed in the `database\migrations` directory. 
 
-## Security Vulnerabilities
+| Column                        |      Type      |  Default |
+|-------------------------------|:-------------:|------:|
+| Id                            |    BIGINT    |       |
+| first_name                    |    VARCHAR   |    |
+| last_name                     |    VARCHAR   |     |
+| shop_category                 |    VARCHAR   |  |
+| portfolio_link                |    VARCHAR   |    |
+| online_stores                 |    VARCHAR   |    NULL |
+| quality_perspective           |    VARCHAR   |  |
+| online_sales_experience       |    VARCHAR   |    |
+| business_marketing_experience |    VARCHAR   |    |
+| created_at                    |    TIMESTAMP |   NULL |
+| updated_at                    |    TIMESTAMP |    NULL |
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### Running the project locally
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- yarn dev && php artisan serve
