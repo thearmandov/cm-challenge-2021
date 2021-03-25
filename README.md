@@ -49,7 +49,26 @@ The API is throttled to thwart any abuse as a pre-caution. With a more robust im
 | created_at                    |    TIMESTAMP |   NULL |
 | updated_at                    |    TIMESTAMP |    NULL |
 
-### Running the project locally
+### API
+| API           |      Type  |  URL                |
+|---------------|:----------:|--------------------:|
+| process-form  |    POST    |  /api/form/submit   |
 
+**Payload example**
+```
+{
+    firstName: 'Test',
+    lastName: 'McTestFace',
+    shopCategory: '3D',
+    portfolioLink: 'https://mydopeportfolio.com',
+    listOfStores: 'test1.com, test2.com, test3.com',
+    qualityPerspective: '...',
+    onlineSalesExperience: '...',
+    businessMarketingExp: '...'
+}
+```
+
+
+### Running the project locally
 
 - yarn dev && php artisan serve

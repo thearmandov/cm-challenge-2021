@@ -19,9 +19,3 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('form/submit', 'FormController@process_form')->middleware('throttle:15,1');
-
-Route::prefix('options')->group(function () {
-    Route::get('/perspective', 'FormController@getQualityPerspectiveOptions' );
-    Route::get('/sales', 'FormController@getQualityPerspectiveOptions' );
-    Route::get('/marketing', 'FormController@getQualityPerspectiveOptions' );
-});
