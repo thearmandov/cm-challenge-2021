@@ -29,7 +29,7 @@ The API is throttled to thwart any abuse as a pre-caution. With a more robust im
 
 - cp .env.example .env
 
-- Be sure to add your local database credentials for the next step
+- Be sure to add your local database credentials  to the newly copied `.env` file for the next step
 
 update the following with your local DB credentials:
 
